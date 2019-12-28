@@ -1,0 +1,15 @@
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.controls-button {
+  width: 20px;
+  height: 20px;
+}
+
+.controls-button-icon {
+  width: 20px;
+  height: 20px;
+}

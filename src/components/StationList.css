@@ -1,0 +1,11 @@
+.stations {
+  height: 400px;
+  overflow-y: scroll;
+  color: lightgray;
+}
+
+.stations-list {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}

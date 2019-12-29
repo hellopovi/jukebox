@@ -19,5 +19,6 @@ function Controls({ logo, active }) {
 export default Controls;
 
 Controls.propTypes = {
-  logo: PropTypes.string.isRequired
+  logo: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired
 };

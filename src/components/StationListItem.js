@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './StationListItem.css';
 import Controls from './Controls';
 
@@ -17,3 +18,10 @@ function StationListItem({ key, name, freq, logo }) {
 }
 
 export default StationListItem;
+
+Controls.propTypes = {
+  key: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  freq: PropTypes.string.isRequired,
+  logo: PropTypes.bool.isRequired
+};

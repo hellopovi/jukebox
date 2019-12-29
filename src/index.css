@@ -7,10 +7,6 @@ body {
   background-color: #20202C;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 #root {
   width: 300px;
   height: 500px;

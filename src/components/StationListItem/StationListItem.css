@@ -1,8 +1,15 @@
 .stations-list-item {
   height: 54px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+.stations-list-item__details:focus {
+  color: #e9ae62;
+}
+
+.stations-list-item__details:hover {
+  color: lightgray;
 }
 
 .stations-list-item--active {
@@ -20,10 +27,16 @@
   cursor: pointer;
 }
 
+.stations-list-item__details-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
 .stations-list-item:last-child > .stations-list-item__details {
   border-bottom: none;
 }
 
-.stations-list-item__details--bold {
+.stations-list-item__details-freq {
   font-weight: bold;
 }

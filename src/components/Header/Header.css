@@ -15,5 +15,10 @@ h1 {
 
 .header-button {
   transform: scale(0.4);
+  transition: 0.1s transform ease-in;
   margin: 10px;
+}
+
+.header-button:focus, .header-button:hover {
+  transform: scale(0.5);
 }

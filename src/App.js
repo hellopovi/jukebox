@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import StationList from './components/StationList/StationList';
 import Footer from './components/Footer/Footer';
@@ -19,26 +19,26 @@ const radioStations = [
   },
   {
     id: 'radio3',
-    name: 'ZipFM',
-    freq: '101.5',
+    name: 'BBC Radio1',
+    freq: '99.1',
     logo: 'https://static-media.streema.com/media/cache/c3/c0/c3c006a91b3d49470c8e4d6ab608c3ca.jpg'
   },
   {
     id: 'radio4',
-    name: 'ZipFM',
-    freq: '101.5',
+    name: 'BBC Radio 2',
+    freq: '102.5',
     logo: 'https://static-media.streema.com/media/cache/c3/c0/c3c006a91b3d49470c8e4d6ab608c3ca.jpg'
   },
   {
     id: 'radio5',
-    name: 'ZipFM',
-    freq: '101.5',
+    name: 'BBC Radio 3',
+    freq: '105.5',
     logo: 'https://static-media.streema.com/media/cache/c3/c0/c3c006a91b3d49470c8e4d6ab608c3ca.jpg'
   },
   {
     id: 'radio6',
-    name: 'ZipFM',
-    freq: '101.5',
+    name: 'KIIS FM',
+    freq: '102.7',
     logo: 'https://static-media.streema.com/media/cache/c3/c0/c3c006a91b3d49470c8e4d6ab608c3ca.jpg'
   }
 ];
@@ -55,13 +55,24 @@ function useActiveStation(id) {
   return [activeStationId, activateStation];
 }
 
-function findStation(radioStations, id) {
+export function findStation(radioStations, id) {
   const activeStation = radioStations.find(station => station.id === id);
   return activeStation?.name;
 }
 
 function App() {
   const [activeStation, setActiveStation] = useActiveStation('');
+  const [stations, setStations] = useState([]);
+
+  // useEffect(() => {
+  //   async function getData() {
+  //     const response = await fetch('http://www.mocky.io/v2/5e08f54b300000610081a16b', { method: 'GET' });
+  //     const stationsData = await response.json();
+  //     setStations(stationsData);
+  //   }
+  //   getData();
+  // }, []);
+
   return (
     <>
       <Header />

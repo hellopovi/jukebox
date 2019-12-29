@@ -10,6 +10,12 @@
 
 .controls-button {
   transform: scale(0.5);
+  transition: 0.1s transform ease-in;
+}
+
+.controls-button:focus,
+.controls-button:hover {
+  transform: scale(0.6);
 }
 
 .controls-station-logo {

@@ -8,9 +8,14 @@ function StationListItem({ id, name, freq, logo, isActive, onClick }) {
   const itemClassName = classnames('stations-list-item', { 'stations-list-item--active': isActive });
   return (
     <li area-expanded={isActive + ''} className={itemClassName}>
-      <button className="stations-list-item__details" onClick={() => onClick(id)}>
-        <span>{name}</span>
-        <span className="stations-list-item__details--bold">{freq}</span>
+      <button
+        className="stations-list-item__details"
+        aria-label="Select station"
+        title="Select station"
+        onClick={() => onClick(id)}
+      >
+        <span className="stations-list-item__details-name">{name}</span>
+        <span className="stations-list-item__details-freq">{freq}</span>
       </button>
       <Controls logo={logo} isActive={isActive} />
     </li>

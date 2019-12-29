@@ -8,7 +8,7 @@ function Footer({ activeStationName }) {
       {activeStationName && (
         <>
           <p className="footer__title">Currently playing</p>
-          <p className="footer__station">{activeStationName}</p>
+          <p data-testid="activeStation" className="footer__station">{activeStationName}</p>
         </>
       )}
     </footer>

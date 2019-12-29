@@ -64,20 +64,24 @@ function App() {
   const [activeStation, setActiveStation] = useActiveStation('');
   const [stations, setStations] = useState([]);
 
-  // useEffect(() => {
-  //   async function getData() {
-  //     const response = await fetch('http://www.mocky.io/v2/5e08f54b300000610081a16b', { method: 'GET' });
-  //     const stationsData = await response.json();
-  //     setStations(stationsData);
-  //   }
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    async function getData() {
+      let stationsData;
+      const response = await fetch('http://www.mocky.io/v2/5e093323300000530081a1a7', { method: 'GET' });
+      stationsData = await response.json();
+      
+      /* uncomment above lines to fetch data from API. */
+      // stationsData = radioStations;
+      setStations(stationsData);
+    }
+    getData();
+  }, []);
 
   return (
     <>
       <Header />
-      <StationList stations={radioStations} activeStationId={activeStation} activateStation={setActiveStation} />
-      <Footer activeStationName={findStation(radioStations, activeStation)} />
+      <StationList stations={stations} activeStationId={activeStation} activateStation={setActiveStation} />
+      <Footer activeStationName={findStation(stations, activeStation)} />
     </>
   );
 }

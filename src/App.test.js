@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import App, { findStation } from './App';
 
 describe('App component tests', () => {
@@ -14,12 +14,27 @@ describe('App component tests', () => {
     expect(headerText).toBeInTheDocument();
   });
 
-  // it('activate radio station', () => {
-  //   const { getByTitle, container } = render(<App />);
-  //   const stationButton = getByTitle('Select station');
-  //   fireEvent.click(stationButton);
-  //   container.
-  // });
+  it('should activate radio station', () => {
+    const { getByTestId, container } = render(<App />);
+    const stationButton = container.querySelector('.stations-list-item > button');
+    const selectedStation = stationButton.querySelector('.stations-list-item__details-name');
+    fireEvent.click(stationButton);
+    const activeStation = getByTestId('activeStation');
+    expect(selectedStation.textContent).toBe(activeStation.textContent);
+  });
+
+  it('should deactivate radio station', () => {
+    const { container } = render(<App />);
+    const stationButton = container.querySelector('.stations-list-item > button');
+    const footer = container.querySelector('footer');
+    fireEvent.click(stationButton);
+    fireEvent.click(stationButton);
+    expect(footer).toMatchInlineSnapshot(`
+    <footer
+      class="footer"
+    />
+  `);
+  });
 
   describe('findStation helper function', () => {
     const stations = [

@@ -1,12 +1,12 @@
 .stations-list-item {
-  height: 60px;
+  height: 54px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .stations-list-item--active {
-  height: 240px;
+  height: 230px;
   flex-direction: column-reverse;
 }
 
@@ -15,8 +15,13 @@
   justify-content: space-between;
   font-size: 1.2rem;
   border-bottom: 1px currentColor solid;
-  margin: 20px;
+  margin: 20px 20px 0 20px;
   padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.stations-list-item:last-child > .stations-list-item__details {
+  border-bottom: none;
 }
 
 .stations-list-item__details--bold {

@@ -2,21 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Footer.css';
 
-function Footer({ activeStation }) {
+function Footer({ activeStationName }) {
   return (
     <footer className="footer">
-      {activeStation && (
+      {activeStationName && (
         <>
           <p className="footer__title">Currently playing</p>
-          <p className="footer__station">ZipFM</p>
+          <p className="footer__station">{activeStationName}</p>
         </>
       )}
     </footer>
   );
 }
 
+Footer.defaultProps = {
+  activeStationName: ''
+};
+
+const { string } = PropTypes;
+
 Footer.propTypes = {
-  activeStation: PropTypes.string.isRequired
+  activeStationName: string
 };
 
 export default Footer;

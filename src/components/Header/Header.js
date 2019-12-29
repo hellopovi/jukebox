@@ -5,11 +5,11 @@ function Header() {
   return (
     <header className="header">
       <button className="header-button" type="button" aria-label="Go back" title="Go back">
-        <img src={`${process.env.PUBLIC_URL}back-arrow.png`}></img>
+        <img src={`${process.env.PUBLIC_URL}back-arrow.png`} alt=""></img>
       </button>
       <h1>Stations</h1>
       <button className="header-button" type="button" aria-label="Stop playing" title="Stop playing">
-        <img src={`${process.env.PUBLIC_URL}switch.png`}></img>
+        <img src={`${process.env.PUBLIC_URL}switch.png`} alt=""></img>
       </button>
     </header>
   );

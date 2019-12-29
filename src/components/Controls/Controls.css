@@ -1,4 +1,8 @@
 .controls {
+  display: none;
+}
+
+.controls--active {
   display: flex;
   align-items: center;
   justify-content: space-evenly;

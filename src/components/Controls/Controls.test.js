@@ -3,14 +3,64 @@ import { render } from '@testing-library/react';
 import Controls from './Controls';
 
 describe('Controls component tests', () => {
-  it('renders component without crashing', () => {
-    const div = document.createElement('div');
-    render(<Controls />, div);
+  describe('Default state', () => {
+    it('renders component without crashing', () => {
+      const div = document.createElement('div');
+      render(<Controls />, div);
+    });
+
+    it('has all buttons disabled', () => {
+      const div = document.createElement('div');
+      const { getByTitle } = render(<Controls />, div);
+      const volumeDown = getByTitle('Volume down');
+      const volumeUp = getByTitle('Volume up');
+      expect(volumeDown).toBeDisabled();
+      expect(volumeUp).toBeDisabled();
+    });
+
+    it('has img element to display logo', () => {
+      const div = document.createElement('div');
+      const { getByAltText } = render(<Controls />, div);
+      const logo = getByAltText('station logo');
+      expect(logo).toBeInTheDocument();
+    });
+
+    it('has default css class to hide it', () => {
+      const div = document.createElement('div');
+      const { container } = render(<Controls />, div);
+      expect(container.firstChild.classList.contains('controls')).toBe(true);
+      expect(container.firstChild.classList.contains('controls--active')).toBe(false);
+    });
   });
 
-  // it('renders Controls with headline', () => {
-  //   const { getByText } = render(<Controls />);
-  //   const headerText = getByText(/stations/i);
-  //   expect(headerText).toBeInTheDocument();
-  // });
+  describe('Active state', () => {
+    it('renders component without crashing', () => {
+      const div = document.createElement('div');
+      render(<Controls isActive={true} />, div);
+    });
+
+    it('has all buttons enabled', () => {
+      const div = document.createElement('div');
+      const { getByTitle } = render(<Controls isActive={true} />, div);
+      const volumeDown = getByTitle('Volume down');
+      const volumeUp = getByTitle('Volume up');
+      expect(volumeDown).toBeEnabled();
+      expect(volumeUp).toBeEnabled();
+    });
+
+    it('shows image', () => {
+      const div = document.createElement('div');
+      const logoUrl = 'localhost:3000/logo.png';
+      const { getByAltText } = render(<Controls isActive={true} logo={logoUrl} />, div);
+      const logo = getByAltText('station logo');
+      expect(logo).toHaveAttribute('src', logoUrl);
+    });
+
+    it('has css class to show it', () => {
+      const div = document.createElement('div');
+      const { container } = render(<Controls isActive={true} />, div);
+      expect(container.firstChild.classList.contains('controls')).toBe(true);
+      expect(container.firstChild.classList.contains('controls--active')).toBe(true);
+    });
+  });
 });

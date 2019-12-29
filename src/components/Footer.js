@@ -4,7 +4,8 @@ import './Footer.css';
 function Footer() {
   return (
     <footer className="footer">
-      <p>Currently playing</p>
+      <p className="footer__title">Currently playing</p>
+      <p className="footer__station">ZipFM</p>
     </footer>
   );
 }

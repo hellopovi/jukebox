@@ -1,17 +1,24 @@
 .stations-list-item {
-  height: 20px;
+  height: 60px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .stations-list-item--active {
-  height: 200px;
+  height: 240px;
+  flex-direction: column-reverse;
 }
 
 .stations-list-item__details {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  font-weight: bold;
   font-size: 1.2rem;
-  border-bottom: 1px orange solid;
+  border-bottom: 1px currentColor solid;
+  margin: 20px;
+  padding-bottom: 10px;
+}
+
+.stations-list-item__details--bold {
+  font-weight: bold;
 }

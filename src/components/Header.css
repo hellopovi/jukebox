@@ -2,20 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  background-color: #f9ab52;
+  height: 70px;
+  background-color: #E9AE62;
   border-radius: 20px 20px 0 0;
   color: white;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .header-button {
-}
-
-.header-button-icon {
-  width: 30px;
+  transform: scale(0.4);
+  margin: 10px;
 }

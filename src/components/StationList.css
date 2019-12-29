@@ -1,8 +1,14 @@
 .stations {
   height: 400px;
   overflow-y: scroll;
-  color: lightgray;
+  color: #9ca0ac;
+  background-color: #30303c;
 }
+
+/* .stations::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+} */
 
 .stations-list {
   padding: 0px;

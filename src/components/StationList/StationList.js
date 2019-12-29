@@ -7,16 +7,14 @@ function StationList({ stations, activeStationId, activateStation }) {
   return (
     <main className="stations">
       <ul className="stations-list">
-        {stations.map(station => {
-          return (
-            <StationListItem
-              key={station.id}
-              {...station}
-              onClick={activateStation}
-              isActive={station.id === activeStationId}
-            />
-          );
-        })}
+        {stations.map(station => (
+          <StationListItem
+            key={station.id}
+            {...station}
+            onClick={activateStation}
+            isActive={station.id === activeStationId}
+          />
+        ))}
       </ul>
     </main>
   );

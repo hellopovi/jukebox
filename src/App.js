@@ -67,11 +67,11 @@ function App() {
   useEffect(() => {
     async function getData() {
       let stationsData;
-      const response = await fetch('http://www.mocky.io/v2/5e093323300000530081a1a7', { method: 'GET' });
-      stationsData = await response.json();
+      // const response = await fetch('http://www.mocky.io/v2/5e093323300000530081a1a7', { method: 'GET' });
+      // stationsData = await response.json();
       
       /* uncomment above lines to fetch data from API. */
-      // stationsData = radioStations;
+      stationsData = radioStations;
       setStations(stationsData);
     }
     getData();

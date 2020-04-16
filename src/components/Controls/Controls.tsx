@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './Controls.css';
 
-function Controls({ logo, isActive }) {
+type ControlsProps = {
+  logo: string;
+  isActive: boolean;
+};
+
+export default function Controls({ logo, isActive }: ControlsProps): JSX.Element {
   const className = classnames('controls', { 'controls--active': isActive });
   return (
     <div className={className}>
@@ -23,17 +27,3 @@ function Controls({ logo, isActive }) {
     </div>
   );
 }
-
-export default Controls;
-
-Controls.defaultProps = {
-  logo: '',
-  isActive: false
-};
-
-const { string, bool } = PropTypes;
-
-Controls.propTypes = {
-  logo: string.isRequired,
-  isActive: bool.isRequired
-};

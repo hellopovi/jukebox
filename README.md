@@ -1,6 +1,6 @@
 # Jukebox 
-![Build Status](https://travis-ci.org/hellopovi/jukebox.svg?branch=master)
-![codecov](https://codecov.io/gh/hellopovi/jukebox/branch/master/graph/badge.svg)
+![Build Status](https://travis-ci.org/hellopovi/jukebox.svg?branch=in-typescript)
+![codecov](https://codecov.io/gh/hellopovi/jukebox/branch/in-typescript/graph/badge.svg)
 
 Simple implementation of Radio player UI.
 

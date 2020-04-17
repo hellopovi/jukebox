@@ -3,23 +3,21 @@ import { render, fireEvent, waitForElement } from '@testing-library/react';
 import StationListItem from './StationListItem';
 
 describe('StationListItem component tests', () => {
+  const station = {
+    id: 'radio1',
+    name: 'RelaxFM',
+    freq: '100',
+    logo: 'https://static-media.streema.com/media/cache/c3/c0/c3c006a91b3d49470c8e4d6ab608c3ca.jpg',
+    isActive: false
+  };
   it('renders component without crashing', () => {
-    const div = document.createElement('div');
-    render(<StationListItem />, div);
+    render(<StationListItem {...station} />);
   });
 
   describe('default state', () => {
     describe('onClick event on radio station', () => {
-      const station = {
-        id: 'radio1',
-        name: 'RelaxFM',
-        freq: '100',
-        logo: 'https://static-media.streema.com/media/cache/c3/c0/c3c006a91b3d49470c8e4d6ab608c3ca.jpg',
-        isActive: false
-      };
-      const div = document.createElement('div');
       const callback = jest.fn();
-      const { getByTitle, container } = render(<StationListItem {...station} onClick={callback} />, div);
+      const { getByTitle, container } = render(<StationListItem {...station} onClick={callback} />);
       const stationButton = getByTitle('Select station');
       fireEvent.click(stationButton);
 

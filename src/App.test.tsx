@@ -4,8 +4,7 @@ import App from './App';
 
 describe('App component tests', () => {
   it('renders main component without crashing', () => {
-    const div = document.createElement('div');
-    render(<App />, div);
+    render(<App />);
   });
 
   it('renders header in the page', () => {

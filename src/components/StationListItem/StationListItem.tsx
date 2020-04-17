@@ -28,7 +28,7 @@ export default function StationListItem({
         className="stations-list-item__details"
         aria-label="Select station"
         title="Select station"
-        onClick={() => {console.log(id); onClick(id)}}
+        onClick={() => onClick(id)}
       >
         <span className="stations-list-item__details-name">{name}</span>
         <span className="stations-list-item__details-freq">{freq}</span>

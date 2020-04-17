@@ -4,8 +4,7 @@ import Header from './Header';
 
 describe('Header component tests', () => {
   it('renders component without crashing', () => {
-    const div = document.createElement('div');
-    render(<Header />, div);
+    render(<Header />);
   });
 
   it('renders Header with headline', () => {

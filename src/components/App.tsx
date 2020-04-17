@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import RADIO_STATIONS, { findStation, radioStation } from './radioStations';
-import Header from './components/Header/Header';
-import StationList from './components/StationList/StationList';
-import Footer from './components/Footer/Footer';
+import RADIO_STATIONS, { findStation, radioStation } from '../radioStations';
+import Header from './Header/Header';
+import StationList from './StationList/StationList';
+import Footer from './Footer/Footer';
 import './App.css';
 
 function useActiveStationId(id: string) {

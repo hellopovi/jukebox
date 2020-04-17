@@ -10,6 +10,7 @@ describe('StationList component tests', () => {
     freq: '100',
     logo: 'https://static-media.streema.com/media/cache/c3/c0/c3c006a91b3d49470c8e4d6ab608c3ca.jpg'
   };
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   const activateStation = () => {};
 
   it('renders component without crashing', () => {

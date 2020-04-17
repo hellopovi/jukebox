@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading, @typescript-eslint/no-empty-function */
 import React from 'react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import StationListItem from './StationListItem';
@@ -10,8 +11,10 @@ describe('StationListItem component tests', () => {
     logo: 'https://static-media.streema.com/media/cache/c3/c0/c3c006a91b3d49470c8e4d6ab608c3ca.jpg',
     isActive: false
   };
+
+  const activateStation = () => {};
   it('renders component without crashing', () => {
-    render(<StationListItem {...station} />);
+    render(<StationListItem {...station} onClick={activateStation} />);
   });
 
   describe('default state', () => {
